@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35013.160
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LensInfo1", "LensInfo1\LensInfo1.csproj", "{07A07432-F95B-44C9-B857-C07DC9789838}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{07A07432-F95B-44C9-B857-C07DC9789838}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07A07432-F95B-44C9-B857-C07DC9789838}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07A07432-F95B-44C9-B857-C07DC9789838}.Debug|x64.ActiveCfg = Debug|x64
+		{07A07432-F95B-44C9-B857-C07DC9789838}.Debug|x64.Build.0 = Debug|x64
+		{07A07432-F95B-44C9-B857-C07DC9789838}.Debug|x86.ActiveCfg = Debug|x86
+		{07A07432-F95B-44C9-B857-C07DC9789838}.Debug|x86.Build.0 = Debug|x86
+		{07A07432-F95B-44C9-B857-C07DC9789838}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07A07432-F95B-44C9-B857-C07DC9789838}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07A07432-F95B-44C9-B857-C07DC9789838}.Release|x64.ActiveCfg = Release|x64
+		{07A07432-F95B-44C9-B857-C07DC9789838}.Release|x64.Build.0 = Release|x64
+		{07A07432-F95B-44C9-B857-C07DC9789838}.Release|x86.ActiveCfg = Release|x86
+		{07A07432-F95B-44C9-B857-C07DC9789838}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B376AC0D-E78C-48C1-9116-ACCCEFD69892}
+	EndGlobalSection
+EndGlobal
