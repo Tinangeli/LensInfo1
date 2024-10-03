@@ -22,6 +22,7 @@ namespace LensInfo1
         public Login()
         {
             InitializeComponent();
+            string Sample;
         }
 
         private void Image_Click(object sender, RoutedEventArgs e)
