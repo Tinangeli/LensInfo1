@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\chan\\source\\repos\\LensInfo1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{07A07432-F95B-44C9-B857-C07DC9789838}|LensInfo1\\LensInfo1.csproj|c:\\users\\chan\\source\\repos\\lensinfo1\\lensinfo1\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{07A07432-F95B-44C9-B857-C07DC9789838}|LensInfo1\\LensInfo1.csproj|solutionrelative:lensinfo1\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{07A07432-F95B-44C9-B857-C07DC9789838}|LensInfo1\\LensInfo1.csproj|c:\\users\\chan\\source\\repos\\lensinfo1\\lensinfo1\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{07A07432-F95B-44C9-B857-C07DC9789838}|LensInfo1\\LensInfo1.csproj|solutionrelative:lensinfo1\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{07A07432-F95B-44C9-B857-C07DC9789838}|LensInfo1\\LensInfo1.csproj|c:\\users\\chan\\source\\repos\\lensinfo1\\lensinfo1\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{07A07432-F95B-44C9-B857-C07DC9789838}|LensInfo1\\LensInfo1.csproj|solutionrelative:lensinfo1\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{07A07432-F95B-44C9-B857-C07DC9789838}|LensInfo1\\LensInfo1.csproj|c:\\users\\chan\\source\\repos\\lensinfo1\\lensinfo1\\usercontrols\\passwordboxinput.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
@@ -46,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -62,25 +62,24 @@
               "RelativeToolTip": "LensInfo1\\Customer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T04:36:26.397Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-07T04:36:26.397Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\chan\\source\\repos\\LensInfo1\\LensInfo1\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "LensInfo1\\MainWindow.xaml.cs",
               "ToolTip": "C:\\Users\\chan\\source\\repos\\LensInfo1\\LensInfo1\\MainWindow.xaml.cs",
               "RelativeToolTip": "LensInfo1\\MainWindow.xaml.cs",
-              "ViewState": "AgIAAPwAAAAAAAAAAAAkwBsAAABqAAAAAAAAAA==",
+              "ViewState": "AgIAACMAAAAAAAAAAAAwwDYAAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-07T04:31:03.718Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "C:\\Users\\chan\\source\\repos\\LensInfo1\\LensInfo1\\MainWindow.xaml",
               "RelativeDocumentMoniker": "LensInfo1\\MainWindow.xaml",
@@ -99,8 +98,7 @@
               "ToolTip": "C:\\Users\\chan\\source\\repos\\LensInfo1\\LensInfo1\\Login.xaml",
               "RelativeToolTip": "LensInfo1\\Login.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-10-07T04:14:45.457Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-07T04:14:45.457Z"
             },
             {
               "$type": "Document",
@@ -112,8 +110,7 @@
               "RelativeToolTip": "LensInfo1\\UserControls\\TextInputBox.xaml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABLAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T04:05:00.254Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-07T04:05:00.254Z"
             },
             {
               "$type": "Document",
@@ -125,8 +122,7 @@
               "RelativeToolTip": "LensInfo1\\UserControls\\PasswordBoxInput.xaml.cs",
               "ViewState": "AgIAABAAAAAAAAAAAAAAACsAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T04:03:51.774Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-07T04:03:51.774Z"
             },
             {
               "$type": "Document",
@@ -149,8 +145,7 @@
               "ToolTip": "C:\\Users\\chan\\source\\repos\\LensInfo1\\LensInfo1\\UserControls\\PasswordBoxInput.xaml",
               "RelativeToolTip": "LensInfo1\\UserControls\\PasswordBoxInput.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-10-07T03:49:16.327Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-07T03:49:16.327Z"
             },
             {
               "$type": "Document",
@@ -161,8 +156,7 @@
               "ToolTip": "C:\\Users\\chan\\source\\repos\\LensInfo1\\LensInfo1\\UserControls\\InputTextBoxTime.xaml",
               "RelativeToolTip": "LensInfo1\\UserControls\\InputTextBoxTime.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-10-02T08:11:41.508Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-02T08:11:41.508Z"
             }
           ]
         }

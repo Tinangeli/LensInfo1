@@ -52,6 +52,7 @@ namespace LensInfo1
 
             DataGridEmployee.Visibility = Visibility.Hidden;
             DataGridMovies.Visibility = Visibility.Hidden;
+            DataGridCustomer.Visibility = Visibility.Hidden;
             SelectEmployees();
             SelectMovies();
             SelectCustomer();
