@@ -35,6 +35,11 @@ namespace LensInfo1
         {
             InitializeComponent();
 
+            var Register = new Register();
+            Register.Show();
+
+            var Login = new Login();
+            Login.Show();
 
             //BINDING FOR EMPLOYEE DATA GRID
             Employees = EmployeeData.Instance.Employees;
@@ -49,6 +54,7 @@ namespace LensInfo1
             DataGridMovies.Visibility = Visibility.Hidden;
             SelectEmployees();
             SelectMovies();
+            SelectCustomer();
             
         }
 
@@ -73,7 +79,9 @@ namespace LensInfo1
                                     FirstName = reader.GetString(1),
                                     LastName = reader.GetString(2),
                                     PhoneNumber = reader.GetString(3),
-                                    Position = reader.GetString(4)
+                                    Position = reader.GetString(4),
+                                    Username = reader.GetString(5),
+                                    Password = reader.GetString(6),
 
                         
                                 
@@ -126,6 +134,44 @@ namespace LensInfo1
                 }
             }
         }
+
+        public void SelectCustomer() {
+
+            using (var connection = new MySqlConnection(SqlConnection))
+            {
+                connection.Open();
+                var command = new MySqlCommand("Select * from customer", connection);
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        
+
+                        CustomerData.Instance.Customers.Add(new Customer
+                        {
+
+
+                            IDCustomer = reader.GetInt32(0),
+                            FirstName = reader.GetString(1),
+                            LastName = reader.GetString(2),
+                            Age = reader.GetInt32(3),
+                            Username = reader.GetString(4),
+                            Password = reader.GetString(5)
+
+
+
+                        });
+
+
+
+
+
+                    }
+                }
+            }
+
+        }
+
 
         public void btnEmployee_Click(object sender, RoutedEventArgs e)
         {

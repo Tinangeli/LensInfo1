@@ -20,6 +20,9 @@
                     <RowDefinition/>
                     <RowDefinition/>
                     <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    
                 </Grid.RowDefinitions>
                                 <!--ID AND COMBO BOX-->
                                 <Grid Grid.Row="0">
@@ -35,6 +38,9 @@
                                 <UserControls:TextInputBox Grid.Row="2" x:Name="TextBoxLastName" txtholder="Last Name" />
                                 <UserControls:TextInputBox Grid.Row="3" x:Name="TextBoxPhoneNum" txtholder="Phone Number"/>
                                 <UserControls:TextInputBox Grid.Row="4" x:Name="TextBoxPosition" txtholder="Position"/>
+                                <UserControls:TextInputBox Grid.Row="5" x:Name="TextBoxUsername" txtholder="Username"/>
+                                <UserControls:TextInputBox Grid.Row="6" x:Name="TextBoxPassword" txtholder="Password"/>
+                                
                                 
             </Grid>
             <!--BOTTOM CONTAINER BUTTONS ETC-->

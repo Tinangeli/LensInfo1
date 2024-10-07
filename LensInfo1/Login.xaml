@@ -25,10 +25,11 @@
                     <RowDefinition/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                    <TextBox Margin="5,20"/>
-                    <PasswordBox Grid.Row="1" Margin="5,20"/>
-                
-            </Grid>
+                    <UserControls:TextInputBox/>
+            <UserControls:PasswordBoxInput Grid.Row="1"  TextHolder="Password"/>
+
+
+        </Grid>
         
             <Grid Grid.Row="1" Grid.Column="2" >
                 <Grid.RowDefinitions>
@@ -44,8 +45,8 @@
                     <RowDefinition/>
                     
                 </Grid.RowDefinitions>
-                    <UserControls:TopButton Margin="70,0,0,40" ContentHolder="Login"/>
-                    <UserControls:TopButton Margin="70,40,0,0" ContentHolder="Register"/>
+                    <UserControls:TopButton Margin="70,0,0,40" ContentHolder="Login" x:Name="ButtonLogin" ButtonBase.Click="ButtonLogin_Click"/>
+                    <UserControls:TopButton Margin="70,40,0,0" ContentHolder="Register" x:Name="ButtonRegister" ButtonBase.Click="ButtonRegister_Click"/>
                 
             </Grid>
     </Grid>

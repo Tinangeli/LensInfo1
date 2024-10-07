@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Chester\source\repos\LensInfo1\LensInfo1\obj\x86\Debug\net8.0-windows\
+C:\Users\chan\source\repos\LensInfo1\LensInfo1\obj\x86\Debug\net8.0-windows\
 LensInfo1
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
-C:\Users\Chester\source\repos\LensInfo1\LensInfo1\App.xaml
-8233157325
+C:\Users\chan\source\repos\LensInfo1\LensInfo1\App.xaml
+111972198817
 
-15-1189760032
-2061882176589
-AddDialog.xaml;AddMovies.xaml;Login.xaml;MainWindow.xaml;UserControls\ComboBox.xaml;UserControls\InputTextBoxTime.xaml;UserControls\TextInputBox.xaml;UserControls\TopButton.xaml;
+19428010737
+206-1332419772
+AddDialog.xaml;AddMovies.xaml;InputPasswordBox.xaml;Login.xaml;MainWindow.xaml;Register.xaml;UserControls\ColorPalette.xaml;UserControls\ComboBox.xaml;UserControls\InputTextBoxTime.xaml;UserControls\TextInputBox.xaml;UserControls\TopButton.xaml;
 
 True
 

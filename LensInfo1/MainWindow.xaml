@@ -93,6 +93,9 @@
                         <DataGridTextColumn Header="Last Name" x:Name="EmployeeColumnLastName" Binding="{Binding LastName}"/>
                         <DataGridTextColumn Header="Phone Number" x:Name="EmployeeColumnPhoneNum" Binding="{Binding PhoneNumber}"/>
                         <DataGridTextColumn Header="Position" x:Name="EmployeeColumnPosition" Binding="{Binding Position}"/>
+                        <DataGridTextColumn Header="Username" x:Name="EmployeeColumnUsername" Binding="{Binding Username}"/>
+                        <DataGridTextColumn Header="Password" x:Name="EmployeeColumnPassword" Binding="{Binding Password}"/>
+
                     </DataGrid.Columns>
                 </DataGrid>
 
@@ -106,6 +109,18 @@
                         <DataGridTextColumn Header="Movie Description" Binding="{Binding MovieDescription}"/>
                         <DataGridTextColumn Header="Date Added" Binding="{Binding DateAdded}"/>
                         
+                    </DataGrid.Columns>
+                </DataGrid>
+                
+                <!--DATAGRID CUSTOMER GENERAL-->
+                <DataGrid x:Name="DataGridCustomer" Background="#FFDAB9" AutoGenerateColumns="False" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="ID" Binding="{Binding IDCustomer}"/>
+                        <DataGridTextColumn Header="First Name" Binding="{Binding Firstname}"/>
+                        <DataGridTextColumn Header="Last Name" Binding="{Binding Lastname}"/>
+                        <DataGridTextColumn Header="Age" Binding="{Binding Age}"/>
+                        <DataGridTextColumn Header="Username" Binding="{Binding Username}"/>
+                        <DataGridTextColumn Header="Password" Binding="{Binding Password}"/>
                     </DataGrid.Columns>
                 </DataGrid>
 

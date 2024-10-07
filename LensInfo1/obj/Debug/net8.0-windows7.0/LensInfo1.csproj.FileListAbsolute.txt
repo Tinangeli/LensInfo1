@@ -1,0 +1,15 @@
+C:\Users\Chester\source\repos\LensInfo1\LensInfo1\obj\Debug\net8.0-windows7.0\LensInfo1.csproj.AssemblyReference.cache
+C:\Users\Chester\source\repos\LensInfo1\LensInfo1\obj\Debug\net8.0-windows7.0\AddDialog.g.cs
+C:\Users\Chester\source\repos\LensInfo1\LensInfo1\obj\Debug\net8.0-windows7.0\AddMovies.g.cs
+C:\Users\Chester\source\repos\LensInfo1\LensInfo1\obj\Debug\net8.0-windows7.0\Login.g.cs
+C:\Users\Chester\source\repos\LensInfo1\LensInfo1\obj\Debug\net8.0-windows7.0\MainWindow.g.cs
+C:\Users\Chester\source\repos\LensInfo1\LensInfo1\obj\Debug\net8.0-windows7.0\Register.g.cs
+C:\Users\Chester\source\repos\LensInfo1\LensInfo1\obj\Debug\net8.0-windows7.0\UserControls\ColorPalette.g.cs
+C:\Users\Chester\source\repos\LensInfo1\LensInfo1\obj\Debug\net8.0-windows7.0\UserControls\ComboBox.g.cs
+C:\Users\Chester\source\repos\LensInfo1\LensInfo1\obj\Debug\net8.0-windows7.0\UserControls\InputTextBoxTime.g.cs
+C:\Users\Chester\source\repos\LensInfo1\LensInfo1\obj\Debug\net8.0-windows7.0\UserControls\TextInputBox.g.cs
+C:\Users\Chester\source\repos\LensInfo1\LensInfo1\obj\Debug\net8.0-windows7.0\UserControls\TopButton.g.cs
+C:\Users\Chester\source\repos\LensInfo1\LensInfo1\obj\Debug\net8.0-windows7.0\App.g.cs
+C:\Users\Chester\source\repos\LensInfo1\LensInfo1\obj\Debug\net8.0-windows7.0\GeneratedInternalTypeHelper.g.cs
+C:\Users\Chester\source\repos\LensInfo1\LensInfo1\obj\Debug\net8.0-windows7.0\LensInfo1_MarkupCompile.cache
+C:\Users\Chester\source\repos\LensInfo1\LensInfo1\obj\Debug\net8.0-windows7.0\LensInfo1_MarkupCompile.lref

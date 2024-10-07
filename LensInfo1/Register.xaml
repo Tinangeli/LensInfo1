@@ -1,0 +1,46 @@
+﻿<Window x:Class="LensInfo1.Register"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LensInfo1"
+        xmlns:UserControls="clr-namespace:LensInfo1.UserControls"
+        mc:Ignorable="d"
+        Title="Register" Height="450" Width="300">
+    <Grid Background="Wheat">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    
+                </Grid.RowDefinitions>
+                    <UserControls:TextInputBox txtholder=" First Name" x:Name="TextBoxFirstName"/>
+                    <UserControls:TextInputBox Grid.Row="1" txtholder=" Last Name" x:Name="TextBoxLastName"/>
+                    <UserControls:TextInputBox Grid.Row="2" txtholder=" Age" x:Name="TextBoxAge"/>
+                    <UserControls:TextInputBox Grid.Row="3" txtholder=" Username" x:Name="TextBoxUsername"/>
+                    <!--<UserControls:TextInputBox Grid.Row="4" txtholder=" Password" x:Name="TextBoxPassword"/>-->
+                    <!--<UserControls:InputPasswordBox Grid.Row="4" textholder="Password" />-->
+                   
+                    
+            
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                
+                    <UserControls:TopButton ContentHolder="Register" x:Name="ButtonRegister" ButtonBase.Click="ButtonRegister_Click"/>
+                
+            </Grid>
+    </Grid>
+</Window>

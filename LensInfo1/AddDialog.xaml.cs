@@ -53,8 +53,9 @@ namespace LensInfo1
                 string LastName = TextBoxLastName.TextInput.Text;
                 string PhoneNumber = TextBoxPhoneNum.TextInput.Text;
                 string Position = TextBoxPosition.TextInput.Text;
-
-                string MySqlQuery = "INSERT INTO employeesint (FirstName, LastName, PhoneNum, Position) VALUES (@FirstName, @LastName, @PhoneNumber, @Position)";
+                string Username = TextBoxUsername.TextInput.Text;
+                string Password = TextBoxPassword.TextInput.Text;
+                string MySqlQuery = "INSERT INTO employeesint (FirstName, LastName, PhoneNum, Position, Username, Password) VALUES (@FirstName, @LastName, @PhoneNumber, @Position, @Username, @Password)";
 
                 using (var command = new MySqlCommand(MySqlQuery, Connection))
                 {
@@ -62,6 +63,8 @@ namespace LensInfo1
                     command.Parameters.AddWithValue("@LastName", LastName);
                     command.Parameters.AddWithValue("@PhoneNumber", PhoneNumber);
                     command.Parameters.AddWithValue("@Position", Position);
+                    command.Parameters.AddWithValue("@Username", Username);
+                    command.Parameters.AddWithValue("@Password", Password);
                     command.ExecuteNonQuery();
                 }
                 int lastInsertedId;
@@ -70,14 +73,16 @@ namespace LensInfo1
                     lastInsertedId = (int)command.ExecuteScalar(); 
                 }
 
-                // Add the new employee to the ObservableCollection
+                
                 EmployeeData.Instance.Employees.Add(new Employee
                 {
                     IDNum = (int)lastInsertedId,
                     FirstName = FirstName,
                     LastName = LastName,
                     PhoneNumber = PhoneNumber,
-                    Position = Position
+                    Position = Position,
+                    Username = Username,
+                    Password = Password,
                 });
 
 

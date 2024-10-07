@@ -16,6 +16,12 @@
     <Compile Update="Login.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Register.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UserControls\ColorPalette.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="UserControls\ComboBox.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -40,6 +46,15 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Register.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UserControls\ColorPalette.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UserControls\PasswordBoxInput.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UserControls\ComboBox.xaml">
