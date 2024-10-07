@@ -21,10 +21,10 @@
                     <RowDefinition/>
                     
                 </Grid.RowDefinitions>
-                    <UserControls:TextInputBox Grid.Row="0" x:Name="InputTextMovieName" txtholder="Movie Name"/>
-                    <UserControls:TextInputBox Grid.Row="1" x:Name="InputTextAgeLimit" txtholder="Suitable Age"/>
-                    <UserControls:TextInputBox Grid.Row="2" x:Name="InputTextDuration" txtholder="Movie Duration"/>
-                    <UserControls:TextInputBox Grid.Row="3" x:Name="InputTextMovieDescription" txtholder="Movie Description"/>                    
+                    <UserControls:TextInputBox Grid.Row="0" x:Name="InputTextMovieName" txtholder="Movie Name (Text)"/>
+                    <UserControls:TextInputBox Grid.Row="1" x:Name="InputTextAgeLimit" txtholder="Suitable Age (18,06)"/>
+                    <UserControls:TextInputBox Grid.Row="2" x:Name="InputTextDuration" txtholder="Movie Duration (HH:MM)"/>
+                    <UserControls:TextInputBox Grid.Row="3" x:Name="InputTextMovieDescription" txtholder="Movie Description (Text)"/>                    
                     
                     
                 

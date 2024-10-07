@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 C:\Users\chan\source\repos\LensInfo1\LensInfo1\App.xaml
-12-84721973
+11-659519135
 
-20-1605018975
+191924513912
 209524221353
-AddDialog.xaml;AddMovies.xaml;InputPasswordBox.xaml;Login.xaml;MainWindow.xaml;Register.xaml;UserControls\ColorPalette.xaml;UserControls\ComboBox.xaml;UserControls\InputTextBoxTime.xaml;UserControls\PasswordBoxInput.xaml;UserControls\TextInputBox.xaml;UserControls\TopButton.xaml;
+AddDialog.xaml;AddMovies.xaml;Login.xaml;MainWindow.xaml;Register.xaml;UserControls\ColorPalette.xaml;UserControls\ComboBox.xaml;UserControls\InputTextBoxTime.xaml;UserControls\PasswordBoxInput.xaml;UserControls\TextInputBox.xaml;UserControls\TopButton.xaml;
 
 True
 

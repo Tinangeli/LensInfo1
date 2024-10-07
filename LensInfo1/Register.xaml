@@ -26,11 +26,11 @@
                     <UserControls:TextInputBox Grid.Row="2" txtholder=" Age" x:Name="TextBoxAge"/>
                     <UserControls:TextInputBox Grid.Row="3" txtholder=" Username" x:Name="TextBoxUsername"/>
                     <!--<UserControls:TextInputBox Grid.Row="4" txtholder=" Password" x:Name="TextBoxPassword"/>-->
-                    <!--<UserControls:InputPasswordBox Grid.Row="4" textholder="Password" />-->
-                   
-                    
-            
-            </Grid>
+                        <UserControls:PasswordBoxInput Grid.Row="4" TextHolder="Password" Margin="5"  />
+
+
+
+        </Grid>
             <Grid Grid.Row="1">
                 <Grid.RowDefinitions>
                     <RowDefinition/>
@@ -38,9 +38,13 @@
                     <RowDefinition/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
                 
                     <UserControls:TopButton ContentHolder="Register" x:Name="ButtonRegister" ButtonBase.Click="ButtonRegister_Click"/>
-                
+                    <UserControls:TopButton Grid.Column="1" ContentHolder="Cancel"/>
             </Grid>
     </Grid>
 </Window>
