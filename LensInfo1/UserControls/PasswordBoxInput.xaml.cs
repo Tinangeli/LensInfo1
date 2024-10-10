@@ -51,5 +51,10 @@ namespace LensInfo1.UserControls
             }
         }
 
+        private void ButtonClear_Click(object sender, RoutedEventArgs e)
+        {
+            InputPasswordBox.Clear();
+            InputPasswordBox.Focus();
+        }
     }
 }

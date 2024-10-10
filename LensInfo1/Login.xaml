@@ -9,48 +9,71 @@
         Title="Login" Height="450" Width="800">
     <Grid Background="LightYellow">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="20*"/>
+            <ColumnDefinition Width="60*"/>
+            <ColumnDefinition Width="20*"/>
+            
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="20*"/>
         </Grid.RowDefinitions>
-        <!--MIDDLE PANEL-->
-            <Grid x:Name="GridMiddle" Grid.Row="1" Grid.Column="1">
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                    <UserControls:TextInputBox/>
-            <UserControls:PasswordBoxInput Grid.Row="1"  TextHolder="Password"/>
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
 
-
-        </Grid>
-        
-            <Grid Grid.Row="1" Grid.Column="2" >
+            </Grid.ColumnDefinitions>
+            <!--MIDDLE PANEL-->
+            <Grid x:Name="GridMiddle" Grid.Row="0" Grid.Column="0">
                 <Grid.RowDefinitions>
+                    <RowDefinition Height="20*"/>
                     <RowDefinition Height="80*"/>
                     <RowDefinition Height="20*"/>
                 </Grid.RowDefinitions>
-                    <Image Source="QRCode.png" ButtonBase.Click="Image_Click" />
-                    <TextBlock Text="Click Me!"  Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" FontWeight="Medium"/>
+                <TextBlock Text="(QR Code Login)" FontSize="20" HorizontalAlignment="Center" FontWeight="Medium"/>
+                <TextBlock Text="Click Me!"  Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" FontWeight="Medium"/>
+                <Image Source="QRCode.png" Grid.Row="1" x:Name="QRImage"  />
+                <Button Background="Transparent" Grid.Row="1" ButtonBase.Click="ButtonQR_Click"  x:Name="ButtonQR"/>
+
             </Grid>
-            <Grid Grid.Row="2" Grid.Column="1">
+
+            <Grid Grid.Row="1" Grid.Column="1" >
                 <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition/>
+                    <RowDefinition Height="30*"/>
+                    <RowDefinition Height="70*"/>
                     
+                    <RowDefinition Height="50*"/>
                 </Grid.RowDefinitions>
-                    <UserControls:TopButton Margin="70,0,0,40" ContentHolder="Login" x:Name="ButtonLogin" ButtonBase.Click="ButtonLogin_Click"/>
-                    <UserControls:TopButton Margin="70,40,0,0" ContentHolder="Register" x:Name="ButtonRegister" ButtonBase.Click="ButtonRegister_Click"/>
+                <Grid Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <UserControls:TextInputBox x:Name="TextBoxUsername" txtholder="Username"/>
+                    <UserControls:PasswordBoxInput Grid.Row="1" x:Name="PasswordBoxPassword"  TextHolder="Password"/>
+                </Grid>
                 
+                <Grid Grid.Row="2" Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+
+                    </Grid.ColumnDefinitions>
+                    <UserControls:TopButton Grid.Row="0" Grid.Column="1" ContentHolder="Login" x:Name="ButtonLogin" ButtonBase.Click="ButtonLogin_Click"/>
+                    <UserControls:TopButton Grid.Row="1" Grid.Column="1" ContentHolder="Register" x:Name="ButtonRegister" ButtonBase.Click="ButtonRegister_Click"/>
+                </Grid>
             </Grid>
-    </Grid>
-    
         
-    
+        </Grid>
+    </Grid>
+
+
+
 </Window>

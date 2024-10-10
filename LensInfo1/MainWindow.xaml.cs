@@ -1,6 +1,8 @@
 ﻿using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Data;
+using System.Drawing;
+using System.IO;
 using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Controls;
@@ -56,6 +58,8 @@ namespace LensInfo1
             SelectEmployees();
             SelectMovies();
             SelectCustomer();
+
+
             
         }
 
@@ -75,19 +79,28 @@ namespace LensInfo1
                 var command = new MySqlCommand("Select * from employeesint", connection);
                 using (var reader = command.ExecuteReader()) {
                     while (reader.Read()) {
-                        EmployeeData.Instance.Employees.Add(new Employee{
-                                    IDNum = reader.GetInt32(0),
-                                    FirstName = reader.GetString(1),
-                                    LastName = reader.GetString(2),
-                                    PhoneNumber = reader.GetString(3),
-                                    Position = reader.GetString(4),
-                                    Username = reader.GetString(5),
-                                    Password = reader.GetString(6),
+                        var employee = new Employee
+                        {
+                            IDNum = reader.GetInt32(0),
+                            FirstName = reader.GetString(1),
+                            LastName = reader.GetString(2),
+                            PhoneNumber = reader.GetString(3),
+                            Position = reader.GetString(4),
+                            Username = reader.GetString(5),
+                            Password = reader.GetString(6),
+                            QRLogin = reader.IsDBNull(7) ? null : reader["QRLogin"] as byte[] 
+                        };
 
                         
-                                
-                         });
+                        if (employee.QRLogin != null)
+                        {
+                            using (var ms = new MemoryStream(employee.QRLogin))
+                            {
+                                employee.QRCodeImage = new Bitmap(ms); 
+                            }
+                        }
 
+                        EmployeeData.Instance.Employees.Add(employee);
 
 
 

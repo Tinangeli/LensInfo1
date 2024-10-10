@@ -16,7 +16,13 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+using System.Windows.Media.Imaging;
+using System.Drawing;
+using ZXing;
+using ZXing.QrCode.Internal;
+using ZXing.Windows.Compatibility;
+using System.IO;
+
 
 namespace LensInfo1
 {
@@ -46,16 +52,59 @@ namespace LensInfo1
 
         public void AddRecordButton_Click(object sender, RoutedEventArgs e)
         {
+            string FirstName = TextBoxFirstName.TextInput.Text;
+            string LastName = TextBoxLastName.TextInput.Text;
+            string PhoneNumber = TextBoxPhoneNum.TextInput.Text;
+            string Position = TextBoxPosition.TextInput.Text;
+            string Username = TextBoxUsername.TextInput.Text;
+            string Password = TextBoxPassword.InputPasswordBox.Password;
+
+            var writer = new BarcodeWriter
+            {
+                Format = BarcodeFormat.QR_CODE,
+                Options = new ZXing.Common.EncodingOptions
+                {
+                    Width = 200,
+                    Height = 200
+                }
+            };
+
+            string FolderPath = @"C:\Users\Chester\source\repos\Tinangeli\LensInfo1\QRCodes\EmployeeQR";
+            string QRFileName = $"{Username}.png";
+            string CombinedCredentials = $"{Username};{Password}";
+
+            Bitmap qrCodeBitMap = writer.Write(CombinedCredentials);
+
+            byte[] imagebytes;
+            using (var ms = new MemoryStream())
+            {
+                qrCodeBitMap.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                imagebytes = ms.ToArray();
+
+            }
+
+
+            string FileNamePath = Path.Combine(FolderPath, QRFileName);
+            qrCodeBitMap.Save(FileNamePath, System.Drawing.Imaging.ImageFormat.Png);
+
+            var bitmapImage = new BitmapImage();
+            using (var stream = new System.IO.MemoryStream())
+            {
+                qrCodeBitMap.Save(stream, System.Drawing.Imaging.ImageFormat.Png);
+                stream.Position = 0;
+                bitmapImage.BeginInit();
+                bitmapImage.StreamSource = stream;
+                bitmapImage.CacheOption = BitmapCacheOption.OnLoad;
+                bitmapImage.EndInit();
+            }
+            QRCodeImage.Source = bitmapImage;
+
+
             try
             {
                 Connection.Open();
-                string FirstName = TextBoxFirstName.TextInput.Text;
-                string LastName = TextBoxLastName.TextInput.Text;
-                string PhoneNumber = TextBoxPhoneNum.TextInput.Text;
-                string Position = TextBoxPosition.TextInput.Text;
-                string Username = TextBoxUsername.TextInput.Text;
-                string Password = TextBoxPassword.TextInput.Text;
-                string MySqlQuery = "INSERT INTO employeesint (FirstName, LastName, PhoneNum, Position, Username, Password) VALUES (@FirstName, @LastName, @PhoneNumber, @Position, @Username, @Password)";
+                
+                string MySqlQuery = "INSERT INTO employeesint (FirstName, LastName, PhoneNum, Position, Username, Password, QRLogin) VALUES (@FirstName, @LastName, @PhoneNumber, @Position, @Username, @Password, @QRLogin)";
 
                 using (var command = new MySqlCommand(MySqlQuery, Connection))
                 {
@@ -65,6 +114,7 @@ namespace LensInfo1
                     command.Parameters.AddWithValue("@Position", Position);
                     command.Parameters.AddWithValue("@Username", Username);
                     command.Parameters.AddWithValue("@Password", Password);
+                    command.Parameters.AddWithValue("@QRLogin", imagebytes);
                     command.ExecuteNonQuery();
                 }
                 int lastInsertedId;
@@ -83,6 +133,7 @@ namespace LensInfo1
                     Position = Position,
                     Username = Username,
                     Password = Password,
+                    QRLogin = imagebytes
                 });
 
 
@@ -98,8 +149,13 @@ namespace LensInfo1
                 Connection.Close();
             }
 
-        }
+                
 
+                
+
+
+        }
+                
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)
             {

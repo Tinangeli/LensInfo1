@@ -11,9 +11,23 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="QRCode.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AForge.NetStandard" Version="2.2.6.1" />
+    <PackageReference Include="AForge.Video" Version="2.2.5" />
+    <PackageReference Include="AForge.Video.DirectShow" Version="2.2.5" />
+    <PackageReference Include="Emgu.CV" Version="4.9.0.5494" />
+    <PackageReference Include="Emgu.CV.Bitmap" Version="4.9.0.5494" />
+    <PackageReference Include="Emgu.CV.runtime.windows" Version="4.9.0.5494" />
     <PackageReference Include="MySql.Data" Version="9.0.0" />
     <PackageReference Include="ZXing.Net" Version="0.16.9" />
     <PackageReference Include="ZXing.Net.Bindings.Windows.Compatibility" Version="0.16.12" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="QRCode.png" />
   </ItemGroup>
 
   <ItemGroup>

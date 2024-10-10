@@ -39,7 +39,7 @@
                                 <UserControls:TextInputBox Grid.Row="3" x:Name="TextBoxPhoneNum" txtholder="Phone Number"/>
                                 <UserControls:TextInputBox Grid.Row="4" x:Name="TextBoxPosition" txtholder="Position"/>
                                 <UserControls:TextInputBox Grid.Row="5" x:Name="TextBoxUsername" txtholder="Username"/>
-                                <UserControls:TextInputBox Grid.Row="6" x:Name="TextBoxPassword" txtholder="Password"/>
+                                <UserControls:PasswordBoxInput Grid.Row="6" x:Name="TextBoxPassword" TextHolder="Password"/>
                                 
                                 
             </Grid>
@@ -57,12 +57,19 @@
                         <ColumnDefinition/>
                         
                     </Grid.ColumnDefinitions>
+                    
+                    
+                    
                     <UserControls:TopButton Grid.Column="0" x:Name="AddRecordButton" ContentHolder="Add" FontSize="20" ButtonBase.Click="AddRecordButton_Click"/>
                     <UserControls:TopButton Grid.Column="1" x:Name="CancelButton" ContentHolder="Cancel" FontSize="20" ButtonBase.Click="CancelButton_Click"/>
                     
                     
                 </Grid>
                 
+                <Grid Grid.Row="3">
+                        
+                    <Image Grid.Row="1" x:Name="QRCodeImage"/>
+                </Grid>
             </Grid>
     </Grid>
 </Window>
