@@ -65,13 +65,28 @@
             <!--vTOP PANEL GRID COLUMN 2v-->
             <Grid Grid.Column="1">
                 <!--vTOP PANEL GRID ROW 2.2v-->
-                <Grid>
+                <Grid Background="#FFF1F1C5">
                     <Grid.RowDefinitions>
                         <RowDefinition/>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="60*"/>
+                            <RowDefinition Height="10*"/>
+                        </Grid.RowDefinitions>
+                        <Image Source="/Logo.Png"/>
+                        <TextBlock Text="(Management)" VerticalAlignment="Top" HorizontalAlignment="Left" Height="24" Margin="159,57,0,0" Grid.RowSpan="2" FontSize="15"/>
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
 
-                    
+                        </Grid.RowDefinitions>
+                        <TextBlock Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Total Sales:" FontSize="20"/>
+                        <UserControls:TextBoxTextGuide Grid.Row="1" x:Name="TotalPriceSales"/>
+                    </Grid>
 
                 </Grid>
                 <!--^TOP PANEL GRID ROW 2.2^-->
@@ -130,7 +145,7 @@
                         <DataGridTextColumn Header="Poster" Binding="{Binding PosterBytes}"/>
                     </DataGrid.Columns>
                 </DataGrid>
-                
+
                 <!--DATAGRID CUSTOMER GENERAL-->
                 <DataGrid x:Name="DataGridCustomer" Background="#FFDAB9" AutoGenerateColumns="False" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
                     <DataGrid.Columns>
@@ -143,7 +158,17 @@
                         <DataGridTextColumn Header="Identity Number" x:Name="CustomerIdentityNumber" Binding="{Binding CustomerIdentityNumber}"/>
                     </DataGrid.Columns>
                 </DataGrid>
-
+                <DataGrid x:Name="DataGridTickets" AutoGenerateColumns="False" CanUserAddRows="False" Background="AntiqueWhite">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Ticket ID" Binding="{Binding TicketID}" />
+                        <DataGridTextColumn Header="Movie ID" Binding="{Binding MovieID}" />
+                        <DataGridTextColumn Header="Movie Name" Binding="{Binding MovieName}" />
+                        <DataGridTextColumn Header="Username" Binding="{Binding Username}" />
+                        <DataGridTextColumn Header="Last Name" Binding="{Binding LastName}" />
+                        <DataGridTextColumn Header="Price" Binding="{Binding Price}" />
+                        <DataGridTextColumn Header="Purchase Date" Binding="{Binding PurchaseDate}" />
+                    </DataGrid.Columns>
+                </DataGrid>
 
             </Grid>
             <!--^ BOTTOM DATA GRID PANEL^-->
@@ -179,7 +204,7 @@
                         <RowDefinition/>
                     </Grid.RowDefinitions>
                     <!--SUB BUTTON FOR EMPLOYEE-->
-                    <Grid Grid.Row="0" x:Name="EmployeeSubButtonGrid" >
+                    <Grid Grid.Row="0" x:Name="EmployeeSubButtonGrid" Visibility="Collapsed" >
                         <Grid.RowDefinitions>
                             <RowDefinition/>
                             <RowDefinition/>
@@ -190,7 +215,7 @@
 
                     </Grid>
                     <!--SUB BUTTON FOR MOVIES-->
-                    <Grid Grid.Row="1" x:Name="MoviesSubButtonGrid">
+                    <Grid Grid.Row="1" x:Name="MoviesSubButtonGrid" Visibility="Collapsed">
                         <Grid.RowDefinitions>
                             <RowDefinition/>
                             <RowDefinition/>
@@ -208,18 +233,26 @@
 
                         </Grid.RowDefinitions>
 
-                        <UserControls:TopButton Grid.Row="0" x:Name="CustomerSales" ContentHolder="Sales" />
-                        <UserControls:TopButton Grid.Row="1"/>
+                        <UserControls:TopButton Grid.Row="0" x:Name="CustomerSales" ContentHolder="Sales"  ButtonBase.Click="CustomerSales_Click"/>
+                        
 
                     </Grid>
                 </Grid>
+                    <Grid Grid.Row="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
 
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                            <UserControls:TopButton Grid.Row="2" ContentHolder="Logout" x:Name="ButtonLogout" ButtonBase.Click="ButtonLogout_Click"/>
+                    </Grid>
             </Grid>
             <!--SIDE PANEL-->
         </Grid>
         <!--^BOTTOM PANEL SEPARATOR^-->
     </Grid>
-    
+
 </Window>
     
 

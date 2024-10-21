@@ -82,7 +82,7 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <UserControls:TopButton x:Name="ButtonEdit" ContentHolder="Edit" ButtonBase.Click="ButtonEdit_Click"/>
-                <UserControls:TopButton Grid.Column="1" x:Name="ButtonCancel" ContentHolder="Cancel"/>
+                <UserControls:TopButton Grid.Column="1" x:Name="ButtonCancel" ContentHolder="Cancel" ButtonBase.Click="ButtonCancel_Click"/>
             </Grid>
         </Border>
     </Grid>

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LensInfo1")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3da4fddf689ebd0df2047f4f821635ed49381302")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b79d8d081f3333eb9c9cf99635d3b6cb62e887a1")]
 [assembly: System.Reflection.AssemblyProductAttribute("LensInfo1")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LensInfo1")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

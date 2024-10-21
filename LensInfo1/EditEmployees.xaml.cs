@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -188,7 +189,7 @@ namespace LensInfo1
                 return;
             }
 
-            // Validate other input fields
+            
             ValidateInputs(errorMessages);
 
             // If there are validation errors, show them and exit the method
@@ -222,7 +223,7 @@ namespace LensInfo1
                     {
                         MessageBox.Show("Employee details updated successfully.", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
 
-                        // Update the in-memory data
+                        
                         var employeeToUpdate = EmployeeData.Instance.Employees.FirstOrDefault(e => e.IDNum == originalId);
                         if (employeeToUpdate != null)
                         {
@@ -235,10 +236,10 @@ namespace LensInfo1
                             employeeToUpdate.IDNum = newId; // Update IDNum in the in-memory data
                         }
 
-                        // Raise the event to notify subscribers that the employee has been updated
+                        
                         EmployeeUpdated?.Invoke();
 
-                        // Optionally, clear the text boxes after updating
+                        
                         ClearTextBoxes();
                     }
                     else
@@ -255,6 +256,16 @@ namespace LensInfo1
             {
                 Connection.Close();
             }
+        }
+
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            this.Visibility = Visibility.Hidden;
+            e.Cancel = true;
+        }
+        private void ButtonCancel_Click(object sender, RoutedEventArgs e)
+        {
+            this.Visibility = Visibility.Hidden;
         }
     }
 }

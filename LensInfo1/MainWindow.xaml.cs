@@ -32,6 +32,8 @@ namespace LensInfo1
         public static string SqlConnection = "server=127.0.0.1;uid=root;pwd=SushiiTr@sh1225;database=tindb";
         public static MySqlConnection Connection = new MySqlConnection(SqlConnection);
 
+        public ObservableCollection<Ticket> Tickets { get; set; } = new ObservableCollection<Ticket>();
+
         public ObservableCollection<Employee> Employees { get; set; }
         public ObservableCollection<Movie> Movies { get; set; }
 
@@ -40,7 +42,7 @@ namespace LensInfo1
         public MainWindow()
         {
             InitializeComponent();
-
+            
             StartTimer();
             NameOfUser.Text = "No Data";
             
@@ -52,8 +54,10 @@ namespace LensInfo1
             var delEmployee = new DeleteEmployees();           
             var editEmployee = new EditEmployees();
             editEmployee.EmployeeUpdated += OnEmployeeUpdated;
-
             
+            DataGridTickets.ItemsSource = Tickets;
+            LoadTickets();
+
             var editCustomer = new EditCustomer();
             editCustomer.CustomerUpdated += OnCustomerUpdated;
                
@@ -86,6 +90,70 @@ namespace LensInfo1
         public MainWindow(string userName) : this() // Calls the default constructor
         {
             NameOfUser.Text = ("Welcome! " + userName); // Set the username after initialization
+        }
+
+        private void LoadTickets()
+        {
+            using (var connection = new MySqlConnection(SqlConnection))
+            {
+                connection.Open();
+                var command = new MySqlCommand("SELECT TicketID, MovieID, MovieName, Username, LastName, Price, PurchaseDate FROM Tickets", connection);
+
+                using (var reader = command.ExecuteReader())
+                {
+                    Tickets.Clear();
+                    while (reader.Read())
+                    {
+                        var ticket = new Ticket
+                        {
+                            TicketID = reader.GetInt32("TicketID"),
+                            MovieID = reader.GetInt32("MovieID"),
+                            MovieName = reader.GetString("MovieName"),
+                            Username = reader.GetString("Username"),
+                            LastName = reader.GetString("LastName"),
+                            Price = reader.GetFloat("Price"),
+                            PurchaseDate = reader.GetDateTime("PurchaseDate")
+                        };
+                        Tickets.Add(ticket);
+                    }
+                }
+            }
+        }
+
+        private void UpdateTotalPrice()
+        {
+            float totalPrice = GetTotalPrice();
+            TotalPriceSales.customtextguide = totalPrice.ToString("C2"); // Format as currency
+        }
+        private float GetTotalPrice()
+        {
+            float totalPrice = 0;
+
+            using (var connection = new MySqlConnection(SqlConnection))
+            {
+                try
+                {
+                    connection.Open();
+                    var command = new MySqlCommand("SELECT SUM(Price) AS TotalPrice FROM Tickets", connection);
+
+                    // Execute the command and read the result
+                    var result = command.ExecuteScalar();
+                    if (result != DBNull.Value)
+                    {
+                        totalPrice = Convert.ToSingle(result);
+                    }
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("Database error: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+
+            return totalPrice;
         }
 
         private void TextInputBox_TextInput(object sender, TextCompositionEventArgs e)
@@ -287,7 +355,7 @@ namespace LensInfo1
             DataGridEmployee.Visibility = Visibility.Visible;
             DataGridMovies.Visibility = Visibility.Hidden;
             DataGridCustomer.Visibility = Visibility.Hidden;
-
+            DataGridTickets.Visibility = Visibility.Hidden;
             EmployeeSubButtonGrid.UpdateLayout();
             
                 if (EmployeeSubButtonGridVisibleStatus == false)
@@ -316,7 +384,7 @@ namespace LensInfo1
             DataGridEmployee.Visibility = Visibility.Hidden;
             DataGridMovies.Visibility = Visibility.Visible;  
             DataGridCustomer.Visibility = Visibility.Hidden;
-
+            DataGridTickets.Visibility = Visibility.Hidden;
             if (MoviesSubButtonGridVisibleStatus == false)
             {
                 MoviesSubButtonGridVisibleStatus = true;
@@ -345,7 +413,7 @@ namespace LensInfo1
             DataGridCustomer.Visibility = Visibility.Visible;
             DataGridEmployee.Visibility = Visibility.Hidden;
             DataGridMovies.Visibility = Visibility.Hidden;
-
+            DataGridTickets.Visibility = Visibility.Hidden;
             if (CustomerSubButtonGridVisibleStatus == false)
             {
                 CustomerSubButtonGridVisibleStatus = true;
@@ -457,6 +525,28 @@ namespace LensInfo1
                 // Show an error message or log it
                 MessageBox.Show($"An error occurred: {ex.Message}");
             }
+        }
+
+        private void CustomerSales_Click(object sender, RoutedEventArgs e)
+        {
+            DataGridCustomer.Visibility = Visibility.Hidden;
+            DataGridEmployee.Visibility = Visibility.Hidden;
+            DataGridMovies.Visibility = Visibility.Hidden;
+            DataGridTickets.Visibility = Visibility.Visible;
+            UpdateTotalPrice();
+
+        }
+
+        private void ButtonLogout_Click(object sender, RoutedEventArgs e)
+        {
+            // Create a new instance of the login window
+            var loginWindow = new Login(); // Adjust the name to match your login window's class
+
+            // Show the login window
+            loginWindow.Show();
+
+           
+            this.Close();
         }
     }
 }

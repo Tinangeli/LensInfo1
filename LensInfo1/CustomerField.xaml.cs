@@ -13,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace LensInfo1
 {
@@ -26,6 +27,7 @@ namespace LensInfo1
         public static string SqlConnection = "server=127.0.0.1;uid=root;pwd=SushiiTr@sh1225;database=tindb";
         public static MySqlConnection Connection = new MySqlConnection(SqlConnection);
         private int customerID;
+        public DispatcherTimer timer;
         public CustomerField(int customerID, string username, string lastName)
         {
             InitializeComponent();
@@ -34,7 +36,8 @@ namespace LensInfo1
             UserName.Text = username;
             LastName.Text = lastName;
             this.customerID = customerID;
-            LoadMovies();
+            LoadMovies(); 
+            StartTimer();
         }
         
         public void LoadMovies()
@@ -122,6 +125,39 @@ namespace LensInfo1
         private void ButtonCart_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+        private void StartTimer()
+        {
+            timer = new DispatcherTimer();
+            timer.Interval = TimeSpan.FromSeconds(1); // Set the timer to tick every second
+            timer.Tick += Timer_Tick; // Subscribe to the Tick event
+            timer.Start(); // Start the timer
+        }
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            try
+            {
+                // Update the TextBlock with the current date and time
+                DateTimeRunning.Text = DateTime.Now.ToString("g"); // Update TextBlock directly
+            }
+            catch (Exception ex)
+            {
+                // Show an error message or log it
+                MessageBox.Show($"An error occurred: {ex.Message}");
+            }
+        }
+
+        private void ButtonLogout_Click(object sender, RoutedEventArgs e)
+        {
+            // Create a new instance of the login window
+            var loginWindow = new Login(); // Adjust the name to match your login window's class
+
+            // Show the login window
+            loginWindow.Show();
+
+            // Close the current window (or hide it if you want to keep it in memory)
+            this.Close(); // Or you can use this.Visibility = Visibility.Hidden; if you want to keep it in memory
         }
     }
 }

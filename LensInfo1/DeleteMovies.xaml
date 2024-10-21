@@ -98,7 +98,7 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                     <UserControls:TopButton x:Name="ButtonDeleteMovie" ContentHolder="Delete" ButtonBase.Click="ButtonDeleteMovie_Click"/>
-                    <UserControls:TopButton Grid.Column="1" x:Name="ButtonCancel" ContentHolder="Cancel"/>
+                    <UserControls:TopButton Grid.Column="1" x:Name="ButtonCancel" ContentHolder="Cancel" ButtonBase.Click="ButtonCancel_Click"/>
                     
             </Grid>
     </Grid>

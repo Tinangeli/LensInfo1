@@ -41,7 +41,10 @@ namespace LensInfo1
             this.Visibility = Visibility.Hidden;
             e.Cancel = true;
         }
-
+        private void CancelButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Visibility = Visibility.Hidden;
+        }
         public void AddRecordButton_Click(object sender, RoutedEventArgs e)
         {
             string firstName = TextBoxFirstName.TextInput.Text;
@@ -174,9 +177,6 @@ namespace LensInfo1
             }
         }
 
-        private void CancelButton_Click(object sender, RoutedEventArgs e)
-        {
-            this.Visibility = Visibility.Hidden;
-        }
+       
     }
 }

@@ -124,3 +124,7 @@ C:\Users\Chester\source\repos\Tinangeli\LensInfo1\LensInfo1\obj\Debug\net8.0-win
 C:\Users\Chester\source\repos\Tinangeli\LensInfo1\LensInfo1\obj\Debug\net8.0-windows7.0\EditEmployees.baml
 C:\Users\Chester\source\repos\Tinangeli\LensInfo1\LensInfo1\obj\Debug\net8.0-windows7.0\UserControls\TextBoxTextGuideNoBox.g.cs
 C:\Users\Chester\source\repos\Tinangeli\LensInfo1\LensInfo1\obj\Debug\net8.0-windows7.0\UserControls\TextBoxTextGuideNoBox.baml
+C:\Users\Chester\source\repos\Tinangeli\LensInfo1\LensInfo1\obj\Debug\net8.0-windows7.0\CartWindow.g.cs
+C:\Users\Chester\source\repos\Tinangeli\LensInfo1\LensInfo1\obj\Debug\net8.0-windows7.0\CustomerField.g.cs
+C:\Users\Chester\source\repos\Tinangeli\LensInfo1\LensInfo1\obj\Debug\net8.0-windows7.0\CartWindow.baml
+C:\Users\Chester\source\repos\Tinangeli\LensInfo1\LensInfo1\obj\Debug\net8.0-windows7.0\CustomerField.baml

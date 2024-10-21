@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -127,10 +128,15 @@ namespace LensInfo1
                 Connection.Close();
             }
         }
-
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            this.Visibility = Visibility.Hidden;
+            e.Cancel = true;
+        }
+        
         private void ExitButtonEditMovies_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Visibility = Visibility.Hidden;
         }
 
         private void TextInputIdMovieSelector_TextChanged(object sender, TextChangedEventArgs e)

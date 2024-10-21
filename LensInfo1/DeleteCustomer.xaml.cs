@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -144,9 +145,14 @@ namespace LensInfo1
             }
         }
 
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            this.Visibility = Visibility.Hidden;
+            e.Cancel = true;
+        }
         private void ButtonCancel_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Visibility = Visibility.Hidden;
         }
     }
 }

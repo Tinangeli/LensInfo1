@@ -3,36 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\Chester\\source\\repos\\Tinangeli\\LensInfo1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{07A07432-F95B-44C9-B857-C07DC9789838}|LensInfo1\\LensInfo1.csproj|c:\\users\\chester\\source\\repos\\tinangeli\\lensinfo1\\lensinfo1\\cartwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{07A07432-F95B-44C9-B857-C07DC9789838}|LensInfo1\\LensInfo1.csproj|solutionrelative:lensinfo1\\cartwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{07A07432-F95B-44C9-B857-C07DC9789838}|LensInfo1\\LensInfo1.csproj|c:\\users\\chester\\source\\repos\\tinangeli\\lensinfo1\\lensinfo1\\customerfield.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{07A07432-F95B-44C9-B857-C07DC9789838}|LensInfo1\\LensInfo1.csproj|solutionrelative:lensinfo1\\customerfield.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{07A07432-F95B-44C9-B857-C07DC9789838}|LensInfo1\\LensInfo1.csproj|c:\\users\\chester\\source\\repos\\tinangeli\\lensinfo1\\lensinfo1\\login.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{07A07432-F95B-44C9-B857-C07DC9789838}|LensInfo1\\LensInfo1.csproj|solutionrelative:lensinfo1\\login.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{07A07432-F95B-44C9-B857-C07DC9789838}|LensInfo1\\LensInfo1.csproj|c:\\users\\chester\\source\\repos\\tinangeli\\lensinfo1\\lensinfo1\\customerfield.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{07A07432-F95B-44C9-B857-C07DC9789838}|LensInfo1\\LensInfo1.csproj|solutionrelative:lensinfo1\\customerfield.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{07A07432-F95B-44C9-B857-C07DC9789838}|LensInfo1\\LensInfo1.csproj|c:\\users\\chester\\source\\repos\\tinangeli\\lensinfo1\\lensinfo1\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{07A07432-F95B-44C9-B857-C07DC9789838}|LensInfo1\\LensInfo1.csproj|solutionrelative:lensinfo1\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{07A07432-F95B-44C9-B857-C07DC9789838}|LensInfo1\\LensInfo1.csproj|c:\\users\\chester\\source\\repos\\tinangeli\\lensinfo1\\lensinfo1\\ticket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{07A07432-F95B-44C9-B857-C07DC9789838}|LensInfo1\\LensInfo1.csproj|solutionrelative:lensinfo1\\ticket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{07A07432-F95B-44C9-B857-C07DC9789838}|LensInfo1\\LensInfo1.csproj|c:\\users\\chester\\source\\repos\\tinangeli\\lensinfo1\\lensinfo1\\cartwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{07A07432-F95B-44C9-B857-C07DC9789838}|LensInfo1\\LensInfo1.csproj|solutionrelative:lensinfo1\\cartwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{07A07432-F95B-44C9-B857-C07DC9789838}|LensInfo1\\LensInfo1.csproj|c:\\users\\chester\\source\\repos\\tinangeli\\lensinfo1\\lensinfo1\\bytearraytoimageconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{07A07432-F95B-44C9-B857-C07DC9789838}|LensInfo1\\LensInfo1.csproj|solutionrelative:lensinfo1\\bytearraytoimageconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{07A07432-F95B-44C9-B857-C07DC9789838}|LensInfo1\\LensInfo1.csproj|c:\\users\\chester\\source\\repos\\tinangeli\\lensinfo1\\lensinfo1\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
@@ -50,116 +22,27 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Login.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\Chester\\source\\repos\\Tinangeli\\LensInfo1\\LensInfo1\\Login.xaml.cs",
-              "RelativeDocumentMoniker": "LensInfo1\\Login.xaml.cs",
-              "ToolTip": "C:\\Users\\Chester\\source\\repos\\Tinangeli\\LensInfo1\\LensInfo1\\Login.xaml.cs",
-              "RelativeToolTip": "LensInfo1\\Login.xaml.cs",
-              "ViewState": "AQIAAEkAAAAAAAAAAAAUwGIAAAAdAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-21T04:14:29.935Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "CartWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\Chester\\source\\repos\\Tinangeli\\LensInfo1\\LensInfo1\\CartWindow.xaml.cs",
-              "RelativeDocumentMoniker": "LensInfo1\\CartWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\Chester\\source\\repos\\Tinangeli\\LensInfo1\\LensInfo1\\CartWindow.xaml.cs",
-              "RelativeToolTip": "LensInfo1\\CartWindow.xaml.cs",
-              "ViewState": "AQIAACwAAAAAAAAAAAAnwEEAAACOAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-21T03:43:40.096Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "CustomerField.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\Chester\\source\\repos\\Tinangeli\\LensInfo1\\LensInfo1\\CustomerField.xaml.cs",
-              "RelativeDocumentMoniker": "LensInfo1\\CustomerField.xaml.cs",
-              "ToolTip": "C:\\Users\\Chester\\source\\repos\\Tinangeli\\LensInfo1\\LensInfo1\\CustomerField.xaml.cs",
-              "RelativeToolTip": "LensInfo1\\CustomerField.xaml.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAF4AAAAvAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-21T02:21:04.265Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "CustomerField.xaml",
-              "DocumentMoniker": "C:\\Users\\Chester\\source\\repos\\Tinangeli\\LensInfo1\\LensInfo1\\CustomerField.xaml",
-              "RelativeDocumentMoniker": "LensInfo1\\CustomerField.xaml",
-              "ToolTip": "C:\\Users\\Chester\\source\\repos\\Tinangeli\\LensInfo1\\LensInfo1\\CustomerField.xaml",
-              "RelativeToolTip": "LensInfo1\\CustomerField.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-10-20T21:39:10.327Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Ticket.cs",
-              "DocumentMoniker": "C:\\Users\\Chester\\source\\repos\\Tinangeli\\LensInfo1\\LensInfo1\\Ticket.cs",
-              "RelativeDocumentMoniker": "LensInfo1\\Ticket.cs",
-              "ToolTip": "C:\\Users\\Chester\\source\\repos\\Tinangeli\\LensInfo1\\LensInfo1\\Ticket.cs",
-              "RelativeToolTip": "LensInfo1\\Ticket.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAUAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-21T03:34:29.975Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "CartWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\Chester\\source\\repos\\Tinangeli\\LensInfo1\\LensInfo1\\CartWindow.xaml",
-              "RelativeDocumentMoniker": "LensInfo1\\CartWindow.xaml",
-              "ToolTip": "C:\\Users\\Chester\\source\\repos\\Tinangeli\\LensInfo1\\LensInfo1\\CartWindow.xaml",
-              "RelativeToolTip": "LensInfo1\\CartWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-10-21T03:21:32.196Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\Chester\\source\\repos\\Tinangeli\\LensInfo1\\LensInfo1\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "LensInfo1\\MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\Chester\\source\\repos\\Tinangeli\\LensInfo1\\LensInfo1\\MainWindow.xaml.cs",
-              "RelativeToolTip": "LensInfo1\\MainWindow.xaml.cs",
-              "ViewState": "AQIAAEEAAAAAAAAAAAAIwFUAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-21T02:43:24.043Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ByteArrayToImageConverter.cs",
-              "DocumentMoniker": "C:\\Users\\Chester\\source\\repos\\Tinangeli\\LensInfo1\\LensInfo1\\ByteArrayToImageConverter.cs",
-              "RelativeDocumentMoniker": "LensInfo1\\ByteArrayToImageConverter.cs",
-              "ToolTip": "C:\\Users\\Chester\\source\\repos\\Tinangeli\\LensInfo1\\LensInfo1\\ByteArrayToImageConverter.cs",
-              "RelativeToolTip": "LensInfo1\\ByteArrayToImageConverter.cs",
-              "ViewState": "AQIAAAEAAAAAAAAAAAAnwB0AAAATAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-21T02:28:40.859Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "C:\\Users\\Chester\\source\\repos\\Tinangeli\\LensInfo1\\LensInfo1\\MainWindow.xaml",
               "RelativeDocumentMoniker": "LensInfo1\\MainWindow.xaml",
               "ToolTip": "C:\\Users\\Chester\\source\\repos\\Tinangeli\\LensInfo1\\LensInfo1\\MainWindow.xaml",
               "RelativeToolTip": "LensInfo1\\MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-10-20T21:25:21.287Z",
+              "WhenOpened": "2024-10-21T06:23:19.617Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Chester\\source\\repos\\Tinangeli\\LensInfo1\\LensInfo1\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "LensInfo1\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\Chester\\source\\repos\\Tinangeli\\LensInfo1\\LensInfo1\\MainWindow.xaml.cs",
+              "RelativeToolTip": "LensInfo1\\MainWindow.xaml.cs",
+              "ViewState": "AQIAAAICAAAAAAAAAAAQwBgCAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-21T06:23:18.889Z",
               "EditorCaption": ""
             }
           ]

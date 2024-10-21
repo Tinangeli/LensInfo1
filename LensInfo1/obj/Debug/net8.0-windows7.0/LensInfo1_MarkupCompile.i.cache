@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 C:\Users\Chester\source\repos\Tinangeli\LensInfo1\LensInfo1\App.xaml
-20-397586530
+2231802692
 
-291278416072
+33-998589096
 212-969299483
-AddDialog.xaml;AddMovies.xaml;DeleteCustomer.xaml;DeleteEmployees.xaml;DeleteMovies.xaml;EditCustomer.xaml;EditEmployees.xaml;EditMovies.xaml;Login.xaml;MainWindow.xaml;QRCamera.xaml;Register.xaml;UserControls\ColorPalette.xaml;UserControls\InputNumberBoxInput.xaml;UserControls\InputTextBoxTime.xaml;UserControls\PasswordBoxInput.xaml;UserControls\TextBoxTextGuide.xaml;UserControls\TextBoxTextGuideNoBox.xaml;UserControls\TextInputBox.xaml;UserControls\TopButton.xaml;
+AddDialog.xaml;AddMovies.xaml;CartWindow.xaml;CustomerField.xaml;DeleteCustomer.xaml;DeleteEmployees.xaml;DeleteMovies.xaml;EditCustomer.xaml;EditEmployees.xaml;EditMovies.xaml;Login.xaml;MainWindow.xaml;QRCamera.xaml;Register.xaml;UserControls\ColorPalette.xaml;UserControls\InputNumberBoxInput.xaml;UserControls\InputTextBoxTime.xaml;UserControls\PasswordBoxInput.xaml;UserControls\TextBoxTextGuide.xaml;UserControls\TextBoxTextGuideNoBox.xaml;UserControls\TextInputBox.xaml;UserControls\TopButton.xaml;
 
-False
+True
 
