@@ -13,6 +13,30 @@
     <Compile Update="AddMovies.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="CartWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="CustomerField.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="DeleteCustomer.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="DeleteEmployees.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="DeleteMovies.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="EditCustomer.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="EditEmployees.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="EditMovies.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Login.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -25,10 +49,16 @@
     <Compile Update="UserControls\ColorPalette.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="UserControls\ComboBox.xaml.cs">
+    <Compile Update="UserControls\InputNumberBoxInput.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="UserControls\InputTextBoxTime.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UserControls\TextBoxTextGuide.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UserControls\TextBoxTextGuideNoBox.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="UserControls\TextInputBox.xaml.cs">
@@ -43,6 +73,30 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="AddMovies.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CartWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CustomerField.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="DeleteCustomer.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="DeleteEmployees.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="DeleteMovies.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="EditCustomer.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="EditEmployees.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="EditMovies.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Login.xaml">
@@ -60,13 +114,19 @@
     <Page Update="UserControls\ColorPalette.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="UserControls\InputNumberBoxInput.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="UserControls\PasswordBoxInput.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="UserControls\ComboBox.xaml">
+    <Page Update="UserControls\InputTextBoxTime.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="UserControls\InputTextBoxTime.xaml">
+    <Page Update="UserControls\TextBoxTextGuide.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UserControls\TextBoxTextGuideNoBox.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UserControls\TextInputBox.xaml">

@@ -1,13 +1,23 @@
-﻿C:\Users\Chester\source\repos\LensInfo1\LensInfo1\obj\Debug\net8.0-windows7.0\GeneratedInternalTypeHelper.g.cs
+﻿C:\Users\Chester\source\repos\Tinangeli\LensInfo1\LensInfo1\obj\Debug\net8.0-windows7.0\GeneratedInternalTypeHelper.g.cs
 
-FC:\Users\Chester\source\repos\LensInfo1\LensInfo1\AddDialog.xaml;;
-FC:\Users\Chester\source\repos\LensInfo1\LensInfo1\AddMovies.xaml;;
-FC:\Users\Chester\source\repos\LensInfo1\LensInfo1\Login.xaml;;
-FC:\Users\Chester\source\repos\LensInfo1\LensInfo1\MainWindow.xaml;;
-FC:\Users\Chester\source\repos\LensInfo1\LensInfo1\Register.xaml;;
-FC:\Users\Chester\source\repos\LensInfo1\LensInfo1\UserControls\ColorPalette.xaml;;
-FC:\Users\Chester\source\repos\LensInfo1\LensInfo1\UserControls\ComboBox.xaml;;
-FC:\Users\Chester\source\repos\LensInfo1\LensInfo1\UserControls\InputTextBoxTime.xaml;;
-FC:\Users\Chester\source\repos\LensInfo1\LensInfo1\UserControls\TextInputBox.xaml;;
-FC:\Users\Chester\source\repos\LensInfo1\LensInfo1\UserControls\TopButton.xaml;;
+FC:\Users\Chester\source\repos\Tinangeli\LensInfo1\LensInfo1\AddDialog.xaml;;
+FC:\Users\Chester\source\repos\Tinangeli\LensInfo1\LensInfo1\AddMovies.xaml;;
+FC:\Users\Chester\source\repos\Tinangeli\LensInfo1\LensInfo1\DeleteCustomer.xaml;;
+FC:\Users\Chester\source\repos\Tinangeli\LensInfo1\LensInfo1\DeleteEmployees.xaml;;
+FC:\Users\Chester\source\repos\Tinangeli\LensInfo1\LensInfo1\DeleteMovies.xaml;;
+FC:\Users\Chester\source\repos\Tinangeli\LensInfo1\LensInfo1\EditCustomer.xaml;;
+FC:\Users\Chester\source\repos\Tinangeli\LensInfo1\LensInfo1\EditEmployees.xaml;;
+FC:\Users\Chester\source\repos\Tinangeli\LensInfo1\LensInfo1\EditMovies.xaml;;
+FC:\Users\Chester\source\repos\Tinangeli\LensInfo1\LensInfo1\Login.xaml;;
+FC:\Users\Chester\source\repos\Tinangeli\LensInfo1\LensInfo1\MainWindow.xaml;;
+FC:\Users\Chester\source\repos\Tinangeli\LensInfo1\LensInfo1\QRCamera.xaml;;
+FC:\Users\Chester\source\repos\Tinangeli\LensInfo1\LensInfo1\Register.xaml;;
+FC:\Users\Chester\source\repos\Tinangeli\LensInfo1\LensInfo1\UserControls\ColorPalette.xaml;;
+FC:\Users\Chester\source\repos\Tinangeli\LensInfo1\LensInfo1\UserControls\InputNumberBoxInput.xaml;;
+FC:\Users\Chester\source\repos\Tinangeli\LensInfo1\LensInfo1\UserControls\InputTextBoxTime.xaml;;
+FC:\Users\Chester\source\repos\Tinangeli\LensInfo1\LensInfo1\UserControls\PasswordBoxInput.xaml;;
+FC:\Users\Chester\source\repos\Tinangeli\LensInfo1\LensInfo1\UserControls\TextBoxTextGuide.xaml;;
+FC:\Users\Chester\source\repos\Tinangeli\LensInfo1\LensInfo1\UserControls\TextBoxTextGuideNoBox.xaml;;
+FC:\Users\Chester\source\repos\Tinangeli\LensInfo1\LensInfo1\UserControls\TextInputBox.xaml;;
+FC:\Users\Chester\source\repos\Tinangeli\LensInfo1\LensInfo1\UserControls\TopButton.xaml;;
 

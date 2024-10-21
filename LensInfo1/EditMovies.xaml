@@ -1,0 +1,93 @@
+﻿<Window x:Class="LensInfo1.EditMovies"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LensInfo1"
+        xmlns:UserControls="clr-namespace:LensInfo1.UserControls"     
+        mc:Ignorable="d"
+        Title="EditMovies" Height="500" Width="400">
+    <Grid Background="LightBlue">
+        <Grid Margin="5" Background="AliceBlue">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="90*"/>
+                <RowDefinition Height="10*"/>
+            </Grid.RowDefinitions>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20*"/>
+                    <RowDefinition Height="60*"/>
+
+                </Grid.RowDefinitions>
+                <Grid Margin="5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40*"/>
+                        <RowDefinition Height="60*"/>
+
+                    </Grid.RowDefinitions>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="60*"/>
+                            <RowDefinition Height="40*"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="Edit Employee Window" FontSize="15"/>
+                        <TextBlock Text="You are editing a data directly to the database!" Foreground="Red" Grid.Row="1"/>
+                    </Grid >
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="30*"/>
+                            <ColumnDefinition Width="60*"/>
+                        </Grid.ColumnDefinitions>
+                        <UserControls:TextInputBox txtholder="ID of Movie" Grid.Column="1"  x:Name="TextInputIdMovieSelector" TextBoxBase.TextChanged="TextInputIdMovieSelector_TextChanged" LostFocus="TextInputIdMovieSelector_LostFocus" />
+                    
+                    <UserControls:TextBoxTextGuideNoBox Grid.Column="0" customtextguide="Search by :" FontSize="10"/>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="40*"/>
+                        <ColumnDefinition Width="60*"/>
+
+                    </Grid.ColumnDefinitions>
+                        <UserControls:TextBoxTextGuideNoBox customtextguide="Current"/>
+                        <UserControls:TextBoxTextGuideNoBox Grid.Row="1" x:Name="TextBlockMovieName" customtextguide="No Data"/>
+                        <UserControls:TextBoxTextGuideNoBox Grid.Row="2" x:Name="TextBlockMovieAge" customtextguide="No Data"/>
+                        <UserControls:TextBoxTextGuideNoBox Grid.Row="3" x:Name="TextBlockMovieDuration" customtextguide="No Data"/>
+                        <UserControls:TextBoxTextGuideNoBox Grid.Row="4" x:Name="TextBlockMovieGenre" customtextguide="No Data"/>
+                    
+                        <UserControls:InputNumberBoxInput Grid.Row="0" Grid.Column="1" x:Name="TextInputEditIdMovies" checkboxcontentholder="Edit ID?" txtholder="ID" />
+                        <UserControls:TextInputBox Grid.Row="1"  Grid.Column="1" x:Name="TextInputEditMovieName" txtholder="Movie Name"/>
+                        <UserControls:TextInputBox Grid.Row="2"  Grid.Column="1" x:Name="TextInputEditMovieAge" txtholder="Suitable Age(Num)"/>
+                        <UserControls:InputTextBoxTime Grid.Row="3"  Grid.Column="1" x:Name="TextInputEditDuration" txtholder="Duration (HH:MM)"/>
+                        <UserControls:TextInputBox Grid.Row="4"  Grid.Column="1" x:Name="TextInputEditGenre" txtholder="Genre"/>
+                </Grid>
+                
+
+
+
+
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+
+                </Grid.ColumnDefinitions>
+
+
+                <UserControls:TopButton x:Name="EditMoviesButton" ButtonBase.Click="EditMoviesButton_Click" ContentHolder="Edit"/>
+                <UserControls:TopButton Grid.Column="1" x:Name="ExitButtonEditMovies" ContentHolder="Cancel" ButtonBase.Click="ExitButtonEditMovies_Click"/>
+
+
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

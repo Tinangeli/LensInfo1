@@ -26,39 +26,69 @@ using System.IO;
 
 namespace LensInfo1
 {
-    
     public partial class AddDialog : Window
     {
-        
-
-        MySql.Data.MySqlClient.MySqlConnection MySqlConnection;
         public static string SqlConnection = "server=127.0.0.1;uid=root;pwd=SushiiTr@sh1225;database=tindb";
         public static MySqlConnection Connection = new MySqlConnection(SqlConnection);
+
         public AddDialog()
         {
             InitializeComponent();
-            //TextBoxFirstName
-            
-            
-                
         }
-                      
+
         protected override void OnClosing(CancelEventArgs e)
         {
             this.Visibility = Visibility.Hidden;
             e.Cancel = true;
         }
 
-
         public void AddRecordButton_Click(object sender, RoutedEventArgs e)
         {
-            string FirstName = TextBoxFirstName.TextInput.Text;
-            string LastName = TextBoxLastName.TextInput.Text;
-            string PhoneNumber = TextBoxPhoneNum.TextInput.Text;
-            string Position = TextBoxPosition.TextInput.Text;
-            string Username = TextBoxUsername.TextInput.Text;
-            string Password = TextBoxPassword.InputPasswordBox.Password;
+            string firstName = TextBoxFirstName.TextInput.Text;
+            string lastName = TextBoxLastName.TextInput.Text;
+            string phoneNumber = TextBoxPhoneNum.TextInput.Text;
+            string position = TextBoxPosition.TextInput.Text;
+            string username = TextBoxUsername.TextInput.Text;
+            string password = TextBoxPassword.InputPasswordBox.Password;
 
+            // Input validation
+            if (string.IsNullOrWhiteSpace(firstName))
+            {
+                MessageBox.Show("First name is required.", "Invalid Input", MessageBoxButton.OK);
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(lastName))
+            {
+                MessageBox.Show("Last name is required.", "Invalid Input", MessageBoxButton.OK);
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(phoneNumber))
+            {
+                MessageBox.Show("Phone number is required.", "Invalid Input", MessageBoxButton.OK);
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(position))
+            {
+                MessageBox.Show("Position is required.", "Invalid Input", MessageBoxButton.OK);
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(username))
+            {
+                MessageBox.Show("Username is required.", "Invalid Input", MessageBoxButton.OK);
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(password))
+            {
+                MessageBox.Show("Password is required.", "Invalid Input", MessageBoxButton.OK);
+                return;
+            }
+
+            // Generate QR code
             var writer = new BarcodeWriter
             {
                 Format = BarcodeFormat.QR_CODE,
@@ -69,28 +99,26 @@ namespace LensInfo1
                 }
             };
 
-            string FolderPath = @"C:\Users\Chester\source\repos\Tinangeli\LensInfo1\QRCodes\EmployeeQR";
-            string QRFileName = $"{Username}.png";
-            string CombinedCredentials = $"{Username};{Password}";
+            string folderPath = @"C:\Users\Chester\source\repos\Tinangeli\LensInfo1\QRCodes\EmployeeQR";
+            string qrFileName = $"{username}.png";
+            string combinedCredentials = $"{username};{password}";
 
-            Bitmap qrCodeBitMap = writer.Write(CombinedCredentials);
+            Bitmap qrCodeBitmap = writer.Write(combinedCredentials);
+            byte[] imageBytes;
 
-            byte[] imagebytes;
             using (var ms = new MemoryStream())
             {
-                qrCodeBitMap.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
-                imagebytes = ms.ToArray();
-
+                qrCodeBitmap.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                imageBytes = ms.ToArray();
             }
 
-
-            string FileNamePath = Path.Combine(FolderPath, QRFileName);
-            qrCodeBitMap.Save(FileNamePath, System.Drawing.Imaging.ImageFormat.Png);
+            string fileNamePath = Path.Combine(folderPath, qrFileName);
+            qrCodeBitmap.Save(fileNamePath, System.Drawing.Imaging.ImageFormat.Png);
 
             var bitmapImage = new BitmapImage();
-            using (var stream = new System.IO.MemoryStream())
+            using (var stream = new MemoryStream())
             {
-                qrCodeBitMap.Save(stream, System.Drawing.Imaging.ImageFormat.Png);
+                qrCodeBitmap.Save(stream, System.Drawing.Imaging.ImageFormat.Png);
                 stream.Position = 0;
                 bitmapImage.BeginInit();
                 bitmapImage.StreamSource = stream;
@@ -99,48 +127,44 @@ namespace LensInfo1
             }
             QRCodeImage.Source = bitmapImage;
 
-
             try
             {
                 Connection.Open();
-                
-                string MySqlQuery = "INSERT INTO employeesint (FirstName, LastName, PhoneNum, Position, Username, Password, QRLogin) VALUES (@FirstName, @LastName, @PhoneNumber, @Position, @Username, @Password, @QRLogin)";
+                string mySqlQuery = "INSERT INTO employeesint (FirstName, LastName, PhoneNum, Position, Username, Password, QRLogin) VALUES (@FirstName, @LastName, @PhoneNumber, @Position, @Username, @Password, @QRLogin)";
 
-                using (var command = new MySqlCommand(MySqlQuery, Connection))
+                using (var command = new MySqlCommand(mySqlQuery, Connection))
                 {
-                    command.Parameters.AddWithValue("@FirstName", FirstName);
-                    command.Parameters.AddWithValue("@LastName", LastName);
-                    command.Parameters.AddWithValue("@PhoneNumber", PhoneNumber);
-                    command.Parameters.AddWithValue("@Position", Position);
-                    command.Parameters.AddWithValue("@Username", Username);
-                    command.Parameters.AddWithValue("@Password", Password);
-                    command.Parameters.AddWithValue("@QRLogin", imagebytes);
+                    command.Parameters.AddWithValue("@FirstName", firstName);
+                    command.Parameters.AddWithValue("@LastName", lastName);
+                    command.Parameters.AddWithValue("@PhoneNumber", phoneNumber);
+                    command.Parameters.AddWithValue("@Position", position);
+                    command.Parameters.AddWithValue("@Username", username);
+                    command.Parameters.AddWithValue("@Password", password);
+                    command.Parameters.AddWithValue("@QRLogin", imageBytes);
                     command.ExecuteNonQuery();
                 }
+
                 int lastInsertedId;
-                using (var command = new MySqlCommand("select idnum from employeesint order by IDnum desc limit 1;", Connection))
+                using (var command = new MySqlCommand("SELECT IDnum FROM employeesint ORDER BY IDnum DESC LIMIT 1;", Connection))
                 {
-                    lastInsertedId = (int)command.ExecuteScalar(); 
+                    lastInsertedId = Convert.ToInt32(command.ExecuteScalar());
                 }
 
-                
                 EmployeeData.Instance.Employees.Add(new Employee
                 {
-                    IDNum = (int)lastInsertedId,
-                    FirstName = FirstName,
-                    LastName = LastName,
-                    PhoneNumber = PhoneNumber,
-                    Position = Position,
-                    Username = Username,
-                    Password = Password,
-                    QRLogin = imagebytes
+                    IDNum = lastInsertedId,
+                    FirstName = firstName,
+                    LastName = lastName,
+                    PhoneNumber = phoneNumber,
+                    Position = position,
+                    Username = username,
+                    Password = password,
+                    QRLogin = imageBytes
                 });
-
 
                 MessageBox.Show("Employee added successfully!", "Success", MessageBoxButton.OK);
             }
-            catch (MySql.Data.MySqlClient.MySqlException ex)
-            
+            catch (MySqlException ex)
             {
                 MessageBox.Show("Error " + ex.Number + " has occurred: " + ex.Message, "Error", MessageBoxButton.OK);
             }
@@ -148,22 +172,11 @@ namespace LensInfo1
             {
                 Connection.Close();
             }
-
-                
-
-                
-
-
         }
-                
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)
-            {
+        {
             this.Visibility = Visibility.Hidden;
-            
-            }
-
-        
-
+        }
     }
 }

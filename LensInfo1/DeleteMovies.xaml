@@ -1,0 +1,105 @@
+﻿<Window x:Class="LensInfo1.DeleteMovies"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LensInfo1"
+        xmlns:UserControls="clr-namespace:LensInfo1.UserControls"
+        mc:Ignorable="d"
+        Title="DeleteMovies" Height="450" Width="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+        <!--ROW 0-->
+             
+            <Grid Margin="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                    <Grid Margin="5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="Delete Movie Window" FontSize="15"/>
+                        <TextBlock Text="You are deleting a data directly to the database!" Foreground="Red" Grid.Row="1"/>
+                    </Grid>
+                    
+                        <Grid Grid.Row="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="30*"/>
+                                <RowDefinition Height="70*"/>
+                            </Grid.RowDefinitions>
+                                <TextBlock Text="Search By:" FontSize="10"/>
+                            <Grid Grid.Row="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="40*"/>
+                                    <ColumnDefinition Width="60*"/>
+                                    
+                                </Grid.ColumnDefinitions>
+                                <UserControls:TextInputBox txtholder="ID" x:Name="InputTextBoxDeleteIdSelector" TextBoxBase.TextChanged="InputTextBoxDeleteIdSelector_TextChanged"/>
+                                <UserControls:TextInputBox Grid.Column="1" txtholder="Name of Movie" x:Name="InputTextBoxDeleteNameSelector" TextBoxBase.TextChanged="InputTextBoxDeleteNameSelector_TextChanged"/>
+                            </Grid>
+                        </Grid>
+            </Grid>
+        <!--ROW 1-->
+        <Grid Grid.Row="1"  Margin="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+
+            </Grid.RowDefinitions>
+                <!--Movie Name-->
+                <!--Movie AgeLimit-->
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="40*"/>
+                            <ColumnDefinition Width="60*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            
+                        </Grid.RowDefinitions>
+                                <UserControls:TextBoxTextGuideNoBox Grid.Row="0" customtextguide="Name:"/>
+                                <UserControls:TextBoxTextGuideNoBox Grid.Row="1" customtextguide="AgeLimit:"/>
+                        
+                                <UserControls:TextBoxTextGuide Grid.Row="0" Grid.Column="1" x:Name="TextBlockDeleteMovieName" customtextguide="Movie Name"/>
+                                <UserControls:TextBoxTextGuide Grid.Row="1" Grid.Column="1" x:Name="TextBlockDeleteAgeLimit" customtextguide="Age Limit"/>
+                    </Grid>
+                <!--Movie Genre-->
+                <!--Movie Duration-->
+                    <Grid Grid.Row="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>                           
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="40*"/>
+                            <ColumnDefinition Width="60*"/>
+                        </Grid.ColumnDefinitions>
+                                <UserControls:TextBoxTextGuideNoBox Grid.Row="0" customtextguide="Duration:"/>
+                                <UserControls:TextBoxTextGuideNoBox Grid.Row="1" customtextguide=" Genre:"/>
+
+                                <UserControls:TextBoxTextGuide Grid.Row="0" Grid.Column="1" x:Name="TextBlockDeleteDuration" customtextguide="Duration"/>
+                                <UserControls:TextBoxTextGuide Grid.Row="1" Grid.Column="1" x:Name="TextBlockDeleteGenre" customtextguide="Genre"/>
+            </Grid>
+               
+            </Grid>
+        <!--ROW 2-->
+            <Grid Grid.Row="2"  Margin="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                    <UserControls:TopButton x:Name="ButtonDeleteMovie" ContentHolder="Delete" ButtonBase.Click="ButtonDeleteMovie_Click"/>
+                    <UserControls:TopButton Grid.Column="1" x:Name="ButtonCancel" ContentHolder="Cancel"/>
+                    
+            </Grid>
+    </Grid>
+</Window>

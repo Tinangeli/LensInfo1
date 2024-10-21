@@ -7,7 +7,7 @@ using System.Threading.Tasks;
  
 namespace LensInfo1
 {
-    class Customer
+     public class Customer
     {
         public int IDCustomer { get; set; }
         public string FirstName { get; set; }
@@ -15,6 +15,8 @@ namespace LensInfo1
         public int Age { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
+
+        public int CustomerIdentityNumber { get; set; }
 
 
     }

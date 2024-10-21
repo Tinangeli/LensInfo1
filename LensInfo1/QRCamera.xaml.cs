@@ -8,7 +8,6 @@ using System.Windows.Threading;
 using System;
 using Emgu.CV;
 
-using Emgu.CV;
 using Emgu.CV.CvEnum;
 using ZXing;
 using ZXing.Windows.Compatibility;

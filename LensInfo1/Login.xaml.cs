@@ -54,32 +54,83 @@ namespace LensInfo1
 
         private void ButtonLogin_Click(object sender, RoutedEventArgs e)
         {
-            string Username = TextBoxUsername.TextInput.Text;
-            string Password = PasswordBoxPassword.InputPasswordBox.Password;
+            string username = TextBoxUsername.TextInput.Text;
+            string password = PasswordBoxPassword.InputPasswordBox.Password;
+
             using (var connection = new MySqlConnection(SqlConnection))
             {
-                connection.Open();
-                var command = new MySqlCommand("Select * from employeesint where Username = @Username and Password = @Password", connection);
-                    command.Parameters.AddWithValue("@username", Username);
-                    command.Parameters.AddWithValue("@Password", Password);
-                    using (var reader = command.ExecuteReader())
+                try
+                {
+                    connection.Open();
+
+                    // Check if the user is an employee
+                    using (var employeeCommand = new MySqlCommand("SELECT FirstName, LastName FROM employeesint WHERE Username = @Username AND Password = @Password", connection))
                     {
-                    
-                        if (reader.Read())
+                        employeeCommand.Parameters.AddWithValue("@Username", username);
+                        employeeCommand.Parameters.AddWithValue("@Password", password);
+
+                        using (var reader = employeeCommand.ExecuteReader())
                         {
-                        var addmovies = new AddMovies();
-                        addmovies.Show();
-                    
-                    
-                    
-                    
-                    
+                            if (reader.Read()) // Employee found
+                            {
+                                string firstName = reader["FirstName"] as string;
+                                string lastName = reader["LastName"] as string;
+
+                                if (!string.IsNullOrEmpty(firstName) && !string.IsNullOrEmpty(lastName))
+                                {
+                                    var mainWindow = new MainWindow($"{firstName} {lastName}");
+                                    mainWindow.Show();
+                                    this.Close(); // Close the login window
+                                    return; // Exit the method
+                                }
+                            }
                         }
                     }
-                
-            }
 
+                    // Check if the user is a customer
+                    using (var customerCommand = new MySqlCommand("SELECT CusID, Username, LastName FROM customer WHERE Username = @Username AND Password = @Password", connection))
+                    {
+                        customerCommand.Parameters.AddWithValue("@Username", username);
+                        customerCommand.Parameters.AddWithValue("@Password", password);
+
+                        using (var reader = customerCommand.ExecuteReader())
+                        {
+                            if (reader.Read()) // Customer found
+                            {
+                                int fetchedCustomerID = reader.GetInt32("CusId");
+                                string fetchedUsername = reader["Username"] as string;
+                                string fetchedLastName = reader["LastName"] as string;
+
+                                if (!string.IsNullOrEmpty(fetchedUsername) && !string.IsNullOrEmpty(fetchedLastName))
+                                {
+                                    // Create the CustomerField window with both username and lastName
+                                    var customerWindow = new CustomerField(fetchedCustomerID, fetchedUsername, fetchedLastName);
+                                    customerWindow.Show();
+                                    this.Close();
+                                    return; // Exit the method
+                                }
+                            }
+                        }
+                    }
+
+                    // If we reach this point, neither an employee nor a customer was found
+                    MessageBox.Show("Invalid username or password.");
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("Database error: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
         }
+
+
+
+
+
         private Login _currentLogin; // Store the current login instance
 
         private void ButtonQR_Click(object sender, RoutedEventArgs e)

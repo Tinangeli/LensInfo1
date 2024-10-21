@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\chan\source\repos\LensInfo1\LensInfo1\obj\x86\Debug\net8.0-windows7.0\
+C:\Users\Chester\source\repos\Tinangeli\LensInfo1\LensInfo1\obj\x86\Debug\net8.0-windows7.0\
 LensInfo1
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
-C:\Users\chan\source\repos\LensInfo1\LensInfo1\App.xaml
-12-84721973
+C:\Users\Chester\source\repos\Tinangeli\LensInfo1\LensInfo1\App.xaml
+2231802692
 
-181748485529
-209524221353
-AddDialog.xaml;AddMovies.xaml;InputPasswordBox.xaml;Login.xaml;MainWindow.xaml;Register.xaml;UserControls\ColorPalette.xaml;UserControls\ComboBox.xaml;UserControls\InputTextBoxTime.xaml;UserControls\PasswordBoxInput.xaml;UserControls\TextInputBox.xaml;UserControls\TopButton.xaml;
+31-1363564705
+212-969299483
+AddDialog.xaml;AddMovies.xaml;CartWindow.xaml;CustomerField.xaml;DeleteCustomer.xaml;DeleteEmployees.xaml;DeleteMovies.xaml;EditCustomer.xaml;EditEmployees.xaml;EditMovies.xaml;Login.xaml;MainWindow.xaml;QRCamera.xaml;Register.xaml;UserControls\ColorPalette.xaml;UserControls\InputNumberBoxInput.xaml;UserControls\InputTextBoxTime.xaml;UserControls\PasswordBoxInput.xaml;UserControls\TextBoxTextGuide.xaml;UserControls\TextBoxTextGuideNoBox.xaml;UserControls\TextInputBox.xaml;UserControls\TopButton.xaml;
 
 False
 

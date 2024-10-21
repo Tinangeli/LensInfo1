@@ -7,6 +7,7 @@ using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Threading;
 using MySql.Data.MySqlClient;
 
 
@@ -24,6 +25,7 @@ namespace LensInfo1
         bool CustomerSubButtonGridVisibleStatus;
         bool AddButtonChangerEmployee;
         bool AddButtonChangerMovie;
+        public DispatcherTimer timer;
 
 
         MySql.Data.MySqlClient.MySqlConnection MySqlConnection;
@@ -33,16 +35,29 @@ namespace LensInfo1
         public ObservableCollection<Employee> Employees { get; set; }
         public ObservableCollection<Movie> Movies { get; set; }
 
+        public ObservableCollection<Customer> Customers { get; set; }
+
         public MainWindow()
         {
             InitializeComponent();
 
-            var Register = new Register();
-            Register.Show();
+            StartTimer();
+            NameOfUser.Text = "No Data";
+            
 
-            var Login = new Login();
-            Login.Show();
+            var editmovies = new EditMovies();
+            editmovies.MovieUpdated += OnMovieUpdated;           
+            var deletemovies = new DeleteMovies();           
+            var delcustomer = new DeleteCustomer();
+            var delEmployee = new DeleteEmployees();           
+            var editEmployee = new EditEmployees();
+            editEmployee.EmployeeUpdated += OnEmployeeUpdated;
 
+            
+            var editCustomer = new EditCustomer();
+            editCustomer.CustomerUpdated += OnCustomerUpdated;
+               
+           
             //BINDING FOR EMPLOYEE DATA GRID
             Employees = EmployeeData.Instance.Employees;
             DataGridEmployee.ItemsSource = Employees;
@@ -51,6 +66,8 @@ namespace LensInfo1
             Movies = MovieData.Instance.Movies;
             DataGridMovies.ItemsSource = Movies;
 
+            Customers = CustomerData.Instance.Customers;
+            DataGridCustomer.ItemsSource = Customers;
 
             DataGridEmployee.Visibility = Visibility.Hidden;
             DataGridMovies.Visibility = Visibility.Hidden;
@@ -63,8 +80,13 @@ namespace LensInfo1
             
         }
 
-        public event PropertyChangedEventHandler? PropertyChanged;
        
+
+        public event PropertyChangedEventHandler? PropertyChanged;
+        public MainWindow(string userName) : this() // Calls the default constructor
+        {
+            NameOfUser.Text = ("Welcome! " + userName); // Set the username after initialization
+        }
 
         private void TextInputBox_TextInput(object sender, TextCompositionEventArgs e)
         {
@@ -79,7 +101,7 @@ namespace LensInfo1
                 var command = new MySqlCommand("Select * from employeesint", connection);
                 using (var reader = command.ExecuteReader()) {
                     while (reader.Read()) {
-                        var employee = new Employee
+                        EmployeeData.Instance.Employees.Add(new Employee
                         {
                             IDNum = reader.GetInt32(0),
                             FirstName = reader.GetString(1),
@@ -89,10 +111,11 @@ namespace LensInfo1
                             Username = reader.GetString(5),
                             Password = reader.GetString(6),
                             QRLogin = reader.IsDBNull(7) ? null : reader["QRLogin"] as byte[] 
-                        };
+                            
+                        });
 
-                        
-                        if (employee.QRLogin != null)
+
+                        /*if (employee.QRLogin != null)
                         {
                             using (var ms = new MemoryStream(employee.QRLogin))
                             {
@@ -100,8 +123,8 @@ namespace LensInfo1
                             }
                         }
 
-                        EmployeeData.Instance.Employees.Add(employee);
-
+                        */
+                        
 
 
 
@@ -116,30 +139,63 @@ namespace LensInfo1
             using (var connection = new MySqlConnection(SqlConnection))
             {
                 connection.Open();
-                var command = new MySqlCommand("Select * from movies", connection);
+                var command = new MySqlCommand("SELECT IDMovie, MovieName, AgeLimit, Duration, Genre, Date_Added, Price FROM Movies", connection);
+
                 using (var reader = command.ExecuteReader())
                 {
                     while (reader.Read())
                     {
-                        TimeSpan timespan = reader.GetTimeSpan(3);
-                        //TimeSpan time = TimeOnly.FromTimeSpan(timespan);
-                        DateTime datetime = reader.GetDateTime(5);
-                        
+                        TimeSpan duration = reader.GetTimeSpan(3);
+                        DateTime dateAdded = reader.GetDateTime(5);
+                        float price = reader.GetFloat(6); // Assuming price is stored as a float in the database
+
                         MovieData.Instance.Movies.Add(new Movie
                         {
-                            
-
                             IDMovie = reader.GetInt32(0),
                             MovieName = reader.GetString(1),
                             AgeLimit = reader.GetInt32(2),
-                            Duration = timespan,
-                            MovieDescription = reader.GetString(4),
-                            DateAdded = datetime
+                            Duration = duration,
+                            Genre = reader.GetString(4),
+                            DateAdded = dateAdded,
+                            Price = price // Add price here
+                        });
+                    }
+                }
+            }
+        }
+
+        public void SelectCustomers()
+        {
+            using (var connection = new MySqlConnection(SqlConnection))
+            {
+                connection.Open();
+                var command = new MySqlCommand("Select * from customer", connection);
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        CustomerData.Instance.Customers.Add(new Customer
+                        {
+                            IDCustomer = reader.GetInt32(0),
+                            FirstName = reader.GetString(1),
+                            LastName = reader.GetString(2),
+                            Age = reader.GetInt32(3),                       
+                            Username = reader.GetString(4),
+                            Password = reader.GetString(5),
+                            //QRLogin = reader.IsDBNull(7) ? null : reader["QRLogin"] as byte[]
+
+                        });
 
 
+                        /*if (employee.QRLogin != null)
+                        {
+                            using (var ms = new MemoryStream(employee.QRLogin))
+                            {
+                                employee.QRCodeImage = new Bitmap(ms); 
+                            }
+                        }
 
-                        }); 
-
+                        */
 
 
 
@@ -147,6 +203,45 @@ namespace LensInfo1
                     }
                 }
             }
+
+        }
+    
+
+        private void OnMovieUpdated()
+        {
+            // Refresh the DataGridMovies after a movie update
+            RefreshMovies();
+        }
+
+        private void RefreshMovies()
+        {
+            // Clear the existing collection if needed
+            MovieData.Instance.Movies.Clear();
+
+            // Re-select movies from the database to refresh the DataGrid
+            SelectMovies();
+        }
+
+
+        private void OnEmployeeUpdated()
+        {
+            RefreshEmployee();
+            SelectEmployees();
+        }
+        private void RefreshEmployee()
+        {
+            EmployeeData.Instance.Employees.Clear();
+        }
+
+        private void OnCustomerUpdated()
+        {
+            RefreshCustomer();
+            SelectCustomers();
+        }
+
+        private void RefreshCustomer()
+        {
+            CustomerData.Instance.Customers.Clear();
         }
 
         public void SelectCustomer() {
@@ -191,7 +286,8 @@ namespace LensInfo1
         {
             DataGridEmployee.Visibility = Visibility.Visible;
             DataGridMovies.Visibility = Visibility.Hidden;
-            
+            DataGridCustomer.Visibility = Visibility.Hidden;
+
             EmployeeSubButtonGrid.UpdateLayout();
             
                 if (EmployeeSubButtonGridVisibleStatus == false)
@@ -218,7 +314,8 @@ namespace LensInfo1
         {            
             
             DataGridEmployee.Visibility = Visibility.Hidden;
-            DataGridMovies.Visibility = Visibility.Visible;            
+            DataGridMovies.Visibility = Visibility.Visible;  
+            DataGridCustomer.Visibility = Visibility.Hidden;
 
             if (MoviesSubButtonGridVisibleStatus == false)
             {
@@ -245,8 +342,10 @@ namespace LensInfo1
 
         private void btnCustomer_Click(object sender, RoutedEventArgs e)
         {
+            DataGridCustomer.Visibility = Visibility.Visible;
+            DataGridEmployee.Visibility = Visibility.Hidden;
+            DataGridMovies.Visibility = Visibility.Hidden;
 
-            
             if (CustomerSubButtonGridVisibleStatus == false)
             {
                 CustomerSubButtonGridVisibleStatus = true;
@@ -284,20 +383,80 @@ namespace LensInfo1
                 AddDialog addDialog = new AddDialog();
                 addDialog.Visibility = Visibility.Visible;
             }
-            else if (MoviesSubButtonGridVisibleStatus == true) { 
-                
+            else if (MoviesSubButtonGridVisibleStatus == true)
+            {
+
                 AddMovies addMovies = new AddMovies();
                 addMovies.Visibility = Visibility.Visible;
-            
+
+            }
+            else if (CustomerSubButtonGridVisibleStatus == true)
+            {
+                Register customerAddDialog = new Register();
+                customerAddDialog.Visibility = Visibility.Visible;
             }
         }
 
-        private void RefreshButton_Click(object sender, RoutedEventArgs e)
+
+        private void EditButton_Click(object sender, RoutedEventArgs e)
         {
-            SelectEmployees();
-            SelectMovies();
+            if (EmployeeSubButtonGridVisibleStatus == true)
+            {
+                EditEmployees editEmployees = new EditEmployees();
+                editEmployees.Visibility = Visibility.Visible;
+            }
+            else if (MoviesSubButtonGridVisibleStatus == true)
+            { 
+                EditMovies editMovies = new EditMovies();
+                editMovies.Visibility = Visibility.Visible;
+            }
+
+            else if (CustomerSubButtonGridVisibleStatus == true)
+            {
+                EditCustomer editCustomer = new EditCustomer();
+                editCustomer.Visibility = Visibility.Visible;
+            }
+        }
+         private void DeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (EmployeeSubButtonGridVisibleStatus == true)
+            {
+                DeleteEmployees deleteEmployees = new DeleteEmployees();
+                deleteEmployees.Visibility = Visibility.Visible;
+            }
+            else if (MoviesSubButtonGridVisibleStatus == true)
+            { 
+                DeleteMovies deleteMovies = new DeleteMovies();
+                deleteMovies.Visibility = Visibility.Visible;
+            }
+
+            else if (CustomerSubButtonGridVisibleStatus == true)
+            {
+                DeleteCustomer deleteCustomer = new DeleteCustomer();
+                deleteCustomer.Visibility = Visibility.Visible;
+            }
         }
 
-        
+        private void StartTimer()
+        {
+            timer = new DispatcherTimer();
+            timer.Interval = TimeSpan.FromSeconds(1); // Set the timer to tick every second
+            timer.Tick += Timer_Tick; // Subscribe to the Tick event
+            timer.Start(); // Start the timer
+        }
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            try
+            {
+                // Update the TextBlock with the current date and time
+                TimeAndDataRunning.Text = DateTime.Now.ToString("g"); // Update TextBlock directly
+            }
+            catch (Exception ex)
+            {
+                // Show an error message or log it
+                MessageBox.Show($"An error occurred: {ex.Message}");
+            }
+        }
     }
 }

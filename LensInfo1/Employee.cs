@@ -23,7 +23,9 @@ namespace LensInfo1
             public string Password { get; set; }
 
             public byte[] QRLogin { get; set; }
-            public Bitmap QRCodeImage { get; set; } // Property to hold the image
+
+            public int EmployeeIdentityNumber { get; set; }
+            //public Bitmap QRCodeImage { get; set; } // Property to hold the image
 
 
     }
